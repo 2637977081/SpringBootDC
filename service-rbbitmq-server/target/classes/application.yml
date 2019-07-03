@@ -1,0 +1,13 @@
+server:
+  port: 10011 #服务端口
+
+spring:
+  application:
+    name: service-rbbitmq-server #服务名称
+  #RbbitMQ 配置
+  rabbitmq:
+    host: 192.168.65.129
+    port: 5672
+    username: admin
+    password: 123456
+
