@@ -14,6 +14,6 @@ public class RbbitConfig {
 
     @Bean
     public Queue messageQueue(){
-        return new Queue("hello1");
+        return new Queue("hello");
     }
 }
