@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cat.code.mapper.TestMapper">
+    <resultMap id="TestResultMap" type="com.cat.code.po.TestPo">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="image" jdbcType="BLOB" property="image" />
+    </resultMap>
+
+    <insert id = "insertImage" parameterType="com.cat.code.po.TestPo">
+      insert into image(id,image) values(#{id},#{image})
+    </insert>
+
+    <select id="selectImageById" parameterType="Integer" resultType="com.cat.code.po.TestPo">
+        select * from image where id = #{id}
+    </select>
+</mapper>
