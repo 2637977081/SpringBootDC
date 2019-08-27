@@ -1,0 +1,55 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: service-multi-mysql
+  #mysql
+  datasource:
+    mysql:
+      primary:
+        driverClassName: com.mysql.jdbc.Driver
+        type: com.alibaba.druid.pool.DruidDataSource
+        username: ictsoft
+        password: ictsoft
+        url: jdbc:mysql://172.16.0.171:3306/test1?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+        #druid配置####
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
+        maxWait: 60000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 1 FROM DUAL
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙，此处是filter修改的地方
+        filters:
+          commons-log.connection-logger-name: stat,wall,log4j
+        maxPoolPreparedStatementPerConnectionSize: 20
+        useGlobalDataSourceStat: true
+        connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=50
+      secondary:
+        driverClassName: com.mysql.jdbc.Driver
+        type: com.alibaba.druid.pool.DruidDataSource
+        username: ictsoft
+        password: ictsoft
+        url: jdbc:mysql://172.16.0.171:3306/test2?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
+        maxWait: 60000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 1 FROM DUAL
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        filters:
+          commons-log.connection-logger-name: stat,wall,log4j
+        maxPoolPreparedStatementPerConnectionSize: 20
+        useGlobalDataSourceStat: true
+        connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=50
+
