@@ -12,3 +12,6 @@
 
 ### 图片存储到数据库中
 - [博客讲解1-设计思路及代码实现](https://blog.csdn.net/qq_34819372/article/details/80565747) 
+
+### redis集成[Jedis]
+- [博客讲解1-设计思路及代码实现](https://blog.csdn.net/qq_34819372/article/details/102960046) 
