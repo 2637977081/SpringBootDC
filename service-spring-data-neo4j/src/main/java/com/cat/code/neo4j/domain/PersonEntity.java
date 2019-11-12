@@ -3,15 +3,13 @@ package com.cat.code.neo4j.domain;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
-import java.io.Serializable;
-import java.util.HashSet;
 import java.util.Set;
 
 /**
  * @Author: lvgang
  * @Time: 2019/11/11 14:11
  * @Email: lvgang@golaxy.cn
- * @Description: todo
+ * @Description: 节点实体
  */
 @NodeEntity(label = "Person")
 public class PersonEntity {
