@@ -58,23 +58,18 @@ public class CrawlerThread implements Runnable {
                         requestEntity = new HttpEntity<String>(null, requestHeaders);
                     }
                     ResponseEntity<String> response = null;
-                    int retryNum = crawlerMetaData.getRetryNum();
-                    int retry = 0;
-//                    while (retry<retryNum) {
-                        try {
-                            //请求类别
-                            if (crawlerMetaData.isPost()) {
-                                response = restTemplate.exchange(url, HttpMethod.POST, requestEntity, String.class, params);
-                            } else {
-                                response = restTemplate.exchange(url, HttpMethod.GET, requestEntity, String.class);
-                            }
+
+                     try {
+                         //请求类别
+                         if (crawlerMetaData.isPost()) {
+                             response = restTemplate.exchange(url, HttpMethod.POST, requestEntity, String.class, params);
+                         } else {
+                             response = restTemplate.exchange(url, HttpMethod.GET, requestEntity, String.class);
+                         }
                         }catch (Exception e){
-                            retry++;
-                            logger.error("{}重新连接{}次",url,retry);
                             Thread.sleep(2000);
                             e.printStackTrace();
                         }
-//                    }
                     PageParser pageParser = crawlerMetaData.getPageParser();
                     pageParser.parse(url,response.getBody());
 

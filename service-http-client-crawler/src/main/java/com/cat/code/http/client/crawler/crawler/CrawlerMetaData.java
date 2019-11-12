@@ -25,8 +25,6 @@ public class CrawlerMetaData {
     private PageParser pageParser;
 
     private boolean isPost;
-
-    private int retryNum=1;
     
     private int pauseMillis;
     
@@ -80,11 +78,6 @@ public class CrawlerMetaData {
             return this;
         }
 
-        public CrawlerMetaData.Builder setRetryNum(int retryNum) {
-            this.crawler.retryNum=retryNum;
-            return this;
-        }
-
         public CrawlerMetaData.Builder setPauseMillis(int pauseMillis) {
             this.crawler.pauseMillis = pauseMillis;
             return this;
@@ -133,13 +126,6 @@ public class CrawlerMetaData {
         isPost = post;
     }
 
-    public int getRetryNum() {
-        return retryNum;
-    }
-
-    public void setRetryNum(int retryNum) {
-        this.retryNum = retryNum;
-    }
 
     public int getPauseMillis() {
         return pauseMillis;
