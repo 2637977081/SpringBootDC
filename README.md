@@ -15,3 +15,7 @@
 
 ### Redis集成[Jedis]
 - [博客讲解1-设计思路及代码实现](https://blog.csdn.net/qq_34819372/article/details/102960046) 
+
+### 图库neo4j集成
+- [博客讲解1-neo4j搭建](https://blog.csdn.net/qq_34819372/article/details/103011409) 
+- [博客讲解2-代码实现](https://blog.csdn.net/qq_34819372/article/details/103014855) 
